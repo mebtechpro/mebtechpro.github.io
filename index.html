@@ -1,90 +1,35 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MebTechPro — встроенная мебель и кемперы</title>
-  <meta name="description" content="Проектирование встроенной мебели, кемперов и Tiny House. Полный комплект: 3D, чертежи, спецификации, карты раскроя. Быстро и по делу."/>
+  <title>MebTechPro — проектирование для мебельных фабрик и частных клиентов</title>
+  <meta name="description" content="MebTechPro: проектирование мебели для фабрик — 3D-сборки, спецификации, карты раскроя, PDF/Excel. Для частных клиентов — встроенная мебель. Дополнительно — кемперы и Tiny House."/>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-    header { background: #222; color: #fff; padding: 40px 20px; text-align: center; }
-    header h1 { margin: 0; font-size: 42px; }
-    header p { margin: 10px 0 0; font-size: 18px; }
-    section { padding: 40px 20px; max-width: 1100px; margin: auto; }
-    h2 { text-align: center; margin-bottom: 30px; font-size: 28px; }
-    .services { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-    .service { background: #fff; padding: 20px; border-radius: 10px; flex: 1 1 320px; max-width: 520px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
-    .service h3 { margin-top: 0; }
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-    .gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.15); cursor: pointer; transition: transform .3s ease; }
-    .gallery img:hover { transform: scale(1.03); }
-    .modal { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(0,0,0,0.8); }
-    .modal-content { margin: 5% auto 0; display: block; max-width: 90%; max-height: 80%; border-radius: 10px; }
-    .close { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 40px; cursor: pointer; }
-    .contacts { text-align: center; background: #eee; padding: 40px 20px; }
-    .contacts p { margin: 5px 0; }
-    .btn{ display:inline-block; padding:14px 26px; margin-top:18px; font-size:18px; font-weight:700; color:#fff; background:#28a745; text-decoration:none; border-radius:8px; transition:background .3s;}
-    .btn:hover{ background:#218838;}
-  </style>
-</head>
-<body>
-  <header>
-    <h1>MebTechPro</h1>
-    <p>Проектируем встроенную мебель и кемперы — быстро и точно</p>
-    <a class="btn" href="https://t.me/dimonkb" target="_blank" rel="noopener">Заказать проект</a>
-  </header>
+    :root { --bg:#f9f9f9; --fg:#333; --card:#fff; --muted:#eee; --brand:#28a745; --brand-d:#218838; }
+    *{box-sizing:border-box}
+    body{font-family:Arial,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;background:var(--bg);color:var(--fg)}
+    a{color:inherit}
+    header{background:#222;color:#fff;text-align:center;padding:42px 20px}
+    header h1{margin:0 0 6px;font-size:44px}
+    header p{margin:0;font-size:18px;opacity:.95}
+    .cta-row{margin-top:18px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-block;padding:14px 22px;font-weight:700;border-radius:10px;text-decoration:none;background:var(--brand);color:#fff;transition:background .25s}
+    .btn.secondary{background:#3a3a3a}
+    .btn:hover{background:var(--brand-d)}
+    .btn.secondary:hover{background:#2c2c2c}
 
-  <section>
-    <h2>Наши услуги</h2>
-    <div class="services">
-      <div class="service">
-        <h3>📐 Встроенная мебель (дом/квартира/офис)</h3>
-        <p>Кухни, гардеробные, ТВ-зоны, стеновые панели. Полный комплект: 3D-модели, чертежи, спецификации, карты раскроя, PDF/Excel-отчёты. 
-        Всё готово к передаче в производство. Стоимость от <b>3000 ₽</b>.</p>
-      </div>
-      <div class="service">
-        <h3>🚐 Кемперы и Tiny House</h3>
-        <p>Проектируем модули под ваши размеры: спальные места, кухонные блоки, шкафы, трансформации. 
-        Оптимизируем вес и крепления, учитываем электрику/воду. Цена от <b>5000 ₽</b>.</p>
-      </div>
-      <div class="service">
-        <h3>🏭 Для фабрик и мастерских</h3>
-        <p>3D-сборки, спецификации, карты раскроя, Excel-ведомости, PDF-инструкции. 
-        Помогаем стандартизировать номенклатуру и ускорить запуск в производство.</p>
-      </div>
-    </div>
-  </section>
+    section{padding:44px 20px;max-width:1100px;margin:auto}
+    h2{font-size:28px;text-align:center;margin:0 0 26px}
+    .lead{max-width:880px;margin:0 auto 26px;opacity:.9;text-align:center}
 
-  <section>
-    <h2>Наши работы</h2>
-    <div class="gallery">
-      <img loading="lazy" referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1615873968403-89e0f575a9a6?auto=format&fit=crop&w=1200&q=80" alt="Современная кухня">
-      <img loading="lazy" referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1600607687920-4e2b3db1a24b?auto=format&fit=crop&w=1200&q=80" alt="Гостиная с диваном">
-      <img loading="lazy" referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80" alt="Светлый интерьер">
-      <img loading="lazy" referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1618221530954-6e1f3a48c661?auto=format&fit=crop&w=1200&q=80" alt="Интерьер кемпера">
-      <img loading="lazy" referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1598300050904-62ac4c17d2bb?auto=format&fit=crop&w=1200&q=80" alt="Модульная мебель">
-    </div>
-  </section>
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+    .card{background:var(--card);border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,.08);padding:20px}
+    .card h3{margin:0 0 8px}
+    .checklist{margin:12px 0 0;padding-left:18px}
+    .checklist li{margin:6px 0}
+    .price{margin-top:8px;font-weight:700}
 
-  <section class="contacts">
-    <h2>Контакты</h2>
-    <p>📧 Email: <a href="mailto:pro100mbt@gmail.com">pro100mbt@gmail.com</a></p>
-    <p>💬 Telegram: <a href="https://t.me/dimonkb" target="_blank" rel="noopener">@dimonkb</a></p>
-    <a class="btn" href="https://t.me/dimonkb" target="_blank" rel="noopener">Написать в Telegram</a>
-  </section>
-
-  <div id="myModal" class="modal"><span class="close">&times;</span><img class="modal-content" id="modalImg"></div>
-
-  <script>
-    const modal = document.getElementById('myModal');
-    const modalImg = document.getElementById('modalImg');
-    document.querySelectorAll('.gallery img').forEach(img=>{
-      img.addEventListener('click', ()=>{ modal.style.display='block'; modalImg.src=img.src; });
-    });
-    document.querySelector('.close').onclick=()=> modal.style.display='none';
-    window.addEventListener('click', e=>{ if(e.target===modal) modal.style.display='none'; });
-  </script>
-</body>
-</html>
-
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+    .gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,.12);cursor:pointer;transition:transform .25s}
+    .gallery img:
