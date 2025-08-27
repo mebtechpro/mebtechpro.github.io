@@ -3,33 +3,155 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MebTechPro — проектирование для мебельных фабрик и частных клиентов</title>
-  <meta name="description" content="MebTechPro: проектирование мебели для фабрик — 3D-сборки, спецификации, карты раскроя, PDF/Excel. Для частных клиентов — встроенная мебель. Дополнительно — кемперы и Tiny House."/>
+  <title>MebTechPro — проектирование мягкой и встроенной мебели</title>
+  <meta name="description" content="MebTechPro: проектирование мягкой и встроенной мебели для фабрик и частных клиентов. Дополнительно — кемперы и Tiny House."/>
   <style>
-    :root { --bg:#f9f9f9; --fg:#333; --card:#fff; --muted:#eee; --brand:#28a745; --brand-d:#218838; }
+    :root { --brand:#28a745; --brand-d:#218838; }
     *{box-sizing:border-box}
-    body{font-family:Arial,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;background:var(--bg);color:var(--fg)}
-    a{color:inherit}
-    header{background:#222;color:#fff;text-align:center;padding:42px 20px}
-    header h1{margin:0 0 6px;font-size:44px}
-    header p{margin:0;font-size:18px;opacity:.95}
-    .cta-row{margin-top:18px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-    .btn{display:inline-block;padding:14px 22px;font-weight:700;border-radius:10px;text-decoration:none;background:var(--brand);color:#fff;transition:background .25s}
-    .btn.secondary{background:#3a3a3a}
+    body{font-family:Arial,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;background:#f9f9f9;color:#333}
+    header{
+      position:relative;
+      color:#fff;
+      text-align:center;
+      padding:90px 20px;
+      background:url('https://images.unsplash.com/photo-1616628182509-3896897dfbfc?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
+    }
+    header::after{
+      content:"";position:absolute;inset:0;background:rgba(0,0,0,0.55);
+    }
+    header .content{position:relative;z-index:1}
+    header h1{margin:0 0 14px;font-size:46px}
+    header p{margin:0;font-size:20px}
+    .cta-row{margin-top:26px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-block;padding:14px 24px;font-weight:700;border-radius:10px;text-decoration:none;background:var(--brand);color:#fff;transition:background .25s}
     .btn:hover{background:var(--brand-d)}
-    .btn.secondary:hover{background:#2c2c2c}
-
-    section{padding:44px 20px;max-width:1100px;margin:auto}
-    h2{font-size:28px;text-align:center;margin:0 0 26px}
-    .lead{max-width:880px;margin:0 auto 26px;opacity:.9;text-align:center}
-
+    section{padding:50px 20px;max-width:1100px;margin:auto}
+    h2{text-align:center;font-size:30px;margin:0 0 28px}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-    .card{background:var(--card);border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,.08);padding:20px}
-    .card h3{margin:0 0 8px}
-    .checklist{margin:12px 0 0;padding-left:18px}
+    .card{background:#fff;border-radius:14px;box-shadow:0 2px 8px rgba(0,0,0,.08);padding:22px}
+    .card h3{margin:0 0 10px}
+    .checklist{margin:10px 0 0;padding-left:18px}
     .checklist li{margin:6px 0}
-    .price{margin-top:8px;font-weight:700}
-
+    .price{margin-top:10px;font-weight:700}
     .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
     .gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,.12);cursor:pointer;transition:transform .25s}
-    .gallery img:
+    .gallery img:hover{transform:scale(1.03)}
+    .contacts{text-align:center;background:#eee;padding:50px 20px}
+    .contacts p{margin:6px 0}
+    .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:999}
+    .modal-content{display:block;max-width:90%;max-height:82%;margin:5% auto;border-radius:12px}
+    .close{position:absolute;top:18px;right:26px;color:#fff;font-size:38px;cursor:pointer}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="content">
+      <h1>MebTechPro</h1>
+      <p>Проектируем мягкую и встроенную мебель для фабрик и частных клиентов.<br/> Дополнительно — кемперы и Tiny House.</p>
+      <div class="cta-row">
+        <a class="btn" href="#b2b">Для фабрик</a>
+        <a class="btn" href="#b2c">Для частников</a>
+        <a class="btn" href="https://t.me/dimonkb" target="_blank" rel="noopener">Связаться в Telegram</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Для фабрик -->
+  <section id="b2b">
+    <h2>Мебель для фабрик и мастерских</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🏭 Комплекты для производства</h3>
+        <ul class="checklist">
+          <li>3D-сборки и чертежи (SolidWorks)</li>
+          <li>Спецификации и карты раскроя</li>
+          <li>PDF-инструкции и Excel-отчёты</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>⚙️ Стандартизация</h3>
+        <ul class="checklist">
+          <li>Шаблоны и конфигурации</li>
+          <li>Учет фурнитуры и материалов</li>
+          <li>Сводные ведомости</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>📦 Форматы выдачи</h3>
+        <p>STEP/DXF/DWG/PDF/Excel + пояснительные записки и инструкции.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Частные -->
+  <section id="b2c">
+    <h2>Встроенная мебель для частных клиентов</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>📐 Кухни, гардеробные, ТВ-зоны</h3>
+        <p>3D-модель и визуализация, полный комплект документов.</p>
+        <p class="price">от <b>3000 ₽</b></p>
+      </div>
+      <div class="card">
+        <h3>🧭 Процесс</h3>
+        <ul class="checklist">
+          <li>Замеры и обсуждение</li>
+          <li>Черновая концепция</li>
+          <li>Выдача пакета</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Доп-опции -->
+  <section id="extra">
+    <h2>Доп-опции: кемперы и Tiny House</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🚐 Кемперы</h3>
+        <p>Рациональная компоновка, модули под размеры авто, учёт электрики и воды.</p>
+        <p class="price">от <b>5000 ₽</b></p>
+      </div>
+      <div class="card">
+        <h3>🏡 Tiny House</h3>
+        <p>Мебель-трансформер, хранение и эргономика для малых пространств.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Галерея -->
+  <section>
+    <h2>Примеры работ</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1615873968403-89e0f575a9a6?auto=format&fit=crop&w=1200&q=80" alt="Кухня"/>
+      <img src="https://images.unsplash.com/photo-1600607687920-4e2b3db1a24b?auto=format&fit=crop&w=1200&q=80" alt="Гостиная"/>
+      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80" alt="Шкаф"/>
+      <img src="https://images.unsplash.com/photo-1618221530954-6e1f3a48c661?auto=format&fit=crop&w=1200&q=80" alt="Кемпер"/>
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <section class="contacts">
+    <h2>Контакты</h2>
+    <p>📧 Email: <a href="mailto:pro100mbt@gmail.com">pro100mbt@gmail.com</a></p>
+    <p>💬 Telegram: <a href="https://t.me/dimonkb" target="_blank">@dimonkb</a></p>
+    <a class="btn" href="https://t.me/dimonkb" target="_blank">Написать в Telegram</a>
+  </section>
+
+  <!-- Модалка -->
+  <div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <img id="modalImg" class="modal-content"/>
+  </div>
+
+  <script>
+    const modal=document.getElementById('modal');
+    const modalImg=document.getElementById('modalImg');
+    document.querySelectorAll('.gallery img').forEach(img=>{
+      img.addEventListener('click',()=>{modal.style.display='block';modalImg.src=img.src;});
+    });
+    document.querySelector('.close').onclick=()=>modal.style.display='none';
+    window.onclick=e=>{if(e.target===modal)modal.style.display='none';}
+  </script>
+</body>
+</html>
